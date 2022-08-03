@@ -10,6 +10,10 @@ public class PasswordMeter {
         if (!lengthCondition) {
             return PasswordStrength.NORMAL;
         }
+        boolean hasUppercase = password.chars().anyMatch(Character::isUpperCase);
+        if (!hasUppercase) {
+            return PasswordStrength.NORMAL;
+        }
         return PasswordStrength.STRONG;
     }
 }
