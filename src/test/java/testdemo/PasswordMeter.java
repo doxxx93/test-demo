@@ -14,6 +14,10 @@ public class PasswordMeter {
         if (!hasUppercase) {
             return PasswordStrength.NORMAL;
         }
+        boolean hasDigit = password.chars().anyMatch(Character::isDigit);
+        if (!hasDigit) {
+            return PasswordStrength.NORMAL;
+        }
         return PasswordStrength.STRONG;
     }
 }
