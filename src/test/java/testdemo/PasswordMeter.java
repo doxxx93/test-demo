@@ -2,7 +2,7 @@ package testdemo;
 
 public class PasswordMeter {
 
-    public void meter(String password) {
+    public PasswordStrength meter(String password) {
         throw new IllegalArgumentException();
     }
 }
