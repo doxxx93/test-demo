@@ -56,4 +56,12 @@ public class PasswordMeterTest {
         assertPasswordStrength("abcdABCD", PasswordStrength.NORMAL);
         assertPasswordStrength("ABCDabcd", PasswordStrength.NORMAL);
     }
+
+    @DisplayName("길이만 충족")
+    @Test
+    void meetLengthConditionOnly() {
+        assertPasswordStrength("asdbdsafsd", PasswordStrength.WEAK);
+        assertPasswordStrength("ASDVSDSCCD", PasswordStrength.WEAK);
+        assertPasswordStrength("12314453632", PasswordStrength.WEAK);
+    }
 }
