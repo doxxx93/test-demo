@@ -19,7 +19,7 @@ public class PasswordMeter {
         if (hasDigit) {
             meets++;
         }
-        if (meets == 1) {
+        if (meets == 1 || meets == 0) {
             return PasswordStrength.WEAK;
         }
         if (meets == 2) {

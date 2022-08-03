@@ -75,4 +75,12 @@ public class PasswordMeterTest {
         assertPasswordStrength("abc123", PasswordStrength.WEAK);
         assertPasswordStrength("123abc", PasswordStrength.WEAK);
     }
+
+    @DisplayName("아무 것도 충족하지 않음")
+    @Test
+    void meetNothing() {
+        assertPasswordStrength("abc", PasswordStrength.WEAK);
+        assertPasswordStrength("123", PasswordStrength.WEAK);
+        assertPasswordStrength("ABC", PasswordStrength.WEAK);
+    }
 }
