@@ -68,4 +68,11 @@ public class PasswordMeterTest {
     void meetUppercaseConditionOnly() {
         assertPasswordStrength("abcABC", PasswordStrength.WEAK);
     }
+
+    @DisplayName("숫자만 충족")
+    @Test
+    void meetDigitConditionOnly() {
+        assertPasswordStrength("abc123", PasswordStrength.WEAK);
+        assertPasswordStrength("123abc", PasswordStrength.WEAK);
+    }
 }
