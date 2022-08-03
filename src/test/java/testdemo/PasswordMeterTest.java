@@ -61,7 +61,5 @@ public class PasswordMeterTest {
     @Test
     void meetLengthConditionOnly() {
         assertPasswordStrength("asdbdsafsd", PasswordStrength.WEAK);
-        assertPasswordStrength("ASDVSDSCCD", PasswordStrength.WEAK);
-        assertPasswordStrength("12314453632", PasswordStrength.WEAK);
     }
 }

@@ -7,14 +7,17 @@ public class PasswordMeter {
             throw new IllegalArgumentException();
         }
         boolean lengthCondition = password.length() >= 8;
+        boolean hasUppercase = password.chars().anyMatch(Character::isUpperCase);
+        boolean hasDigit = password.chars().anyMatch(Character::isDigit);
+        if (lengthCondition && !hasUppercase && !hasDigit) {
+            return PasswordStrength.WEAK;
+        }
         if (!lengthCondition) {
             return PasswordStrength.NORMAL;
         }
-        boolean hasUppercase = password.chars().anyMatch(Character::isUpperCase);
         if (!hasUppercase) {
             return PasswordStrength.NORMAL;
         }
-        boolean hasDigit = password.chars().anyMatch(Character::isDigit);
         if (!hasDigit) {
             return PasswordStrength.NORMAL;
         }
