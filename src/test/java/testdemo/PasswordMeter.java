@@ -22,15 +22,10 @@ public class PasswordMeter {
         if (meets == 1) {
             return PasswordStrength.WEAK;
         }
-        if (!lengthCondition) {
-            return PasswordStrength.NORMAL;
-        }
-        if (!hasUppercase) {
-            return PasswordStrength.NORMAL;
-        }
-        if (!hasDigit) {
+        if (meets == 2) {
             return PasswordStrength.NORMAL;
         }
         return PasswordStrength.STRONG;
     }
 }
+
