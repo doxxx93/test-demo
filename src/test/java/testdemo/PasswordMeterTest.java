@@ -28,5 +28,7 @@ public class PasswordMeterTest {
     void meetAllConditions() { // 리턴 타입이 있어야 함을 인지함.
         PasswordStrength result = passwordMeter.meter("abcABC123");
         assertThat(result).isEqualTo(PasswordStrength.STRONG);
+        PasswordStrength result2 = passwordMeter.meter("123abcABC");
+        assertThat(result2).isEqualTo(PasswordStrength.STRONG);
     }
 }
