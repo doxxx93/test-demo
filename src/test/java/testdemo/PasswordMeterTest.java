@@ -40,5 +40,6 @@ public class PasswordMeterTest {
     void meetDigitAndUppercaseConditionButTooShort() {
         assertPasswordStrength("abcC123", PasswordStrength.NORMAL);
         assertPasswordStrength("123abcC", PasswordStrength.NORMAL);
+        assertPasswordStrength("Cabc123", PasswordStrength.NORMAL);
     }
 }

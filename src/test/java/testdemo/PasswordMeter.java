@@ -6,6 +6,10 @@ public class PasswordMeter {
         if (password == null || password.isEmpty()) {
             throw new IllegalArgumentException();
         }
+        boolean lengthCondition = password.length() >= 8;
+        if (!lengthCondition) {
+            return PasswordStrength.NORMAL;
+        }
         return PasswordStrength.STRONG;
     }
 }
