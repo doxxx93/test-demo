@@ -3,6 +3,9 @@ package testdemo;
 public class PasswordMeter {
 
     public PasswordStrength meter(String password) {
-        throw new IllegalArgumentException();
+        if (password == null || password.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+        return PasswordStrength.STRONG;
     }
 }
